@@ -1,26 +1,24 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import React, { useState } from 'react';
 
-function App() {
+export const LoginStateContext = React.createContext();
 
-  const [data, setData] = useState([]);
+const App = () => {
 
-  const getData = async () => {
-    const rawData = await fetch("http://127.0.0.1:8000/account/health", {mode: "no-cors"});
-    const jsonData = await rawData.json();
-    setData(jsonData);
-  };
-
-  useEffect(()=>{
-    getData();
-  })
+  const [accessToken, setAccessToken] = useState("Default");
 
   return (
-    <div className="App">
-      Hello
-      {data}
-    </div>
+    <LoginStateContext.Provider value={{accessToken, setAccessToken}}>
+      <Router>
+            <Routes>
+              <Route path="/home" element={<Home />}></Route>
+              <Route path="/" element={<Login />}></Route>
+            </Routes>
+      </Router>
+    </LoginStateContext.Provider>
   );
-}
+};
 
 export default App;
