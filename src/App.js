@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Login from './pages/Login';
+import LoginGoogle from './pages/LoginGoogle';
 import Logout from './pages/Logout';
 import React, { useState } from 'react';
 
@@ -18,7 +18,7 @@ const App = () => {
         <Router>
               <Routes>
                 <Route path="/" element={<Home />}></Route> 
-                <Route path="/login" element={<Login />}></Route>
+                <Route path="/login/google" element={<LoginGoogle />}></Route>
                 <Route path="/logout" element={<Logout />}></Route>
               </Routes>
         </Router>
