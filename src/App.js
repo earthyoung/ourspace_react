@@ -9,11 +9,11 @@ export const dataStateContext = React.createContext();
 
 const App = () => {
 
-  const [accessToken, setAccessToken] = useState("Default");
+  const [login, setLogin] = useState(false);
   const [data, setData] = useState([]);
 
   return (
-    <LoginStateContext.Provider value={{accessToken, setAccessToken}}>
+    <LoginStateContext.Provider value={{login, setLogin}}>
       <dataStateContext.Provider value={{data, setData}}>
         <Router>
               <Routes>
