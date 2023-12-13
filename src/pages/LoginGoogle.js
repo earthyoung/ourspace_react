@@ -8,7 +8,6 @@ const LoginGoogle = () => {
     const clientSecret = process.env.REACT_APP_GOOGLE_CLIENT_SECRET;
 
     const onSuccess = async (res) => {
-        console.log("onSuccess");
         const user = {
             "grant_type": "convert_token",
             "client_id": clientId,
@@ -16,14 +15,13 @@ const LoginGoogle = () => {
             "backend": "google-oauth2",
             "token": res.credential,
         }
-        console.log(user);
-        const {data} = await axios.post("http://127.0.0.1:8000/account/health", user, {headers: {
+        const {data} = await axios.post("http://127.0.0.1:8000/account/google/login/", user, {headers: {
             'Content-Type': 'application/json'
         }}, {withCredentials: true});
         axios.defaults.headers.common["Authorization"] = `Bearer ${data["access_token"]}`;
         localStorage.clear();
         localStorage.setItem('access_token', data.access_token);
-        localStorage.setItem("refesh_token", data.refresh_token);
+        localStorage.setItem("refresh_token", data.refresh_token);
         window.location.href = "/";
     }
 
