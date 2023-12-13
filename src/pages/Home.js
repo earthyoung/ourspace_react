@@ -8,7 +8,7 @@ const Home = () => {
 
 	const {login, setLogin} = useContext(LoginStateContext);
 	const [id, setId] = useState(null);
-	const [email, setEmail] = useState(null);
+	const [email, setEmail] = useState("익명");
 
 	useEffect(()=>{
         console.log("loginStatus", login);
@@ -18,7 +18,7 @@ const Home = () => {
 		if(!localStorage.getItem("access_token")) {
 			setLogin(false);
 			setId(null);
-			setEmail(null);
+			setEmail("익명");
 		} else {
 			async function getUserData() {
 				const {data} = await axios.get("http://127.0.0.1:8000/account/user/", {headers: {"Authorization": "Bearer " + localStorage.getItem("access_token")}})
@@ -33,8 +33,7 @@ const Home = () => {
 
 	return (
 		<div className="Home">
-			<h3>Id: {id}</h3>
-			<h3>Email: {email}</h3>
+			<div className="EmailInput">{email}님, 환영합니다!</div>
 			{login ? <Logout /> : <LoginGoogle />}
 		</div>
 	)

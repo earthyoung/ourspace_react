@@ -32,12 +32,14 @@ const LoginGoogle = () => {
 
     const GoogleLoginButton = () => {
         return (
-            <GoogleOAuthProvider clientId={clientId}>
-                <GoogleLogin
-                    onSuccess={onSuccess}
-                    onFailure={onFailure}
-                />
-            </GoogleOAuthProvider>
+            <div className="GoogleLoginButton">
+                <GoogleOAuthProvider clientId={clientId}>
+                    <GoogleLogin
+                        onSuccess={onSuccess}
+                        onFailure={onFailure}
+                    />
+                </GoogleOAuthProvider>
+            </div>
         )
     }
 

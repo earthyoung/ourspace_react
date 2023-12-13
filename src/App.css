@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&display=swap');
+
+body {
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Do Hyeon';
+    min-height: 100vh;
+    margin: 0px;
+}
+
+.Logout {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.EmailInput {
+    text-align: center;
+    font-family: 'Do Hyeon';
+    font-size: 24px;
+}

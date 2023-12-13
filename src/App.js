@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import LoginGoogle from './pages/LoginGoogle';
 import Logout from './pages/Logout';
 import React, { useState } from 'react';
+import "./App.css"
 
 export const LoginStateContext = React.createContext();
 export const dataStateContext = React.createContext();
