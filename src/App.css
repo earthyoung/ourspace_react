@@ -10,6 +10,18 @@ body {
     margin: 0px;
 }
 
+.Home {
+    display: block;
+}
+
+.GoogleLogin {
+    padding: 10px;
+}
+
+.KakaoLogin {
+    padding: 10px;
+}
+
 .Logout {
     text-align: center;
     justify-content: center;
@@ -18,6 +30,13 @@ body {
 
 .EmailInput {
     text-align: center;
-    font-family: 'Do Hyeon';
+    /* font-family: 'Do Hyeon'; */
     font-size: 24px;
+    display: inline;
+}
+
+.EmailInputName {
+    display: inline;
+    text-align: center;
+    color: tomato;
 }

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { LoginStateContext } from "../App";
+import { LoginStateContext } from "../../App";
 
 
 const Logout = () => {
@@ -15,7 +15,6 @@ const Logout = () => {
             localStorage.removeItem("access_token");
             localStorage.removeItem("refresh_token");
             setLogin(false);
-            console.log("setLogin-false")
             navigate("/");
         }
     }

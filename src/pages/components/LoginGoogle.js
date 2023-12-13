@@ -2,7 +2,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import axios from "axios";
 import React, { useContext } from "react";
-import { LoginStateContext } from "../App";
+import { LoginStateContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const LoginGoogle = () => {
@@ -21,7 +21,6 @@ const LoginGoogle = () => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${data["access_token"]}`;
         localStorage.setItem('access_token', data.access_token);
         localStorage.setItem("refresh_token", data.refresh_token);
-        console.log("setLogin-true");
         setLogin(true);
         navigate("/");
     }
