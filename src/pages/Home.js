@@ -1,11 +1,10 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { LoginStateContext } from "../App";
-import LoginGoogle from "./components/LoginGoogle";
-import Logout from "./components/Logout";
-import FriendListButton from "./components/FriendListButton";
 import AppointmentListButton from "./components/AppointmentListButton";
+import FriendListButton from "./components/FriendListButton";
 import LoginKakao from "./components/LoginKakao";
+import Logout from "./components/Logout";
 
 const Home = () => {
 
@@ -46,7 +45,7 @@ const Home = () => {
 		<div className="Home">
 			<div className="EmailInput"><div className="EmailInputName">{email}</div>님, 환영합니다!</div>
 			<br />
-			{login ? <Buttons /> : (<><LoginGoogle /><br /><LoginKakao /></>)}
+			{login ? <Buttons /> : <LoginKakao />}
 		</div>
 	)
 }

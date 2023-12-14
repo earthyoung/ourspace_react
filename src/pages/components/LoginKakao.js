@@ -13,8 +13,10 @@ const LoginKakao = () => {
 
     const kakaoOnSuccess = async (res)=>{
         const accessToken = res.response.access_token;
+        const refreshToken = res.response.refresh_token;
         const userData = {
-            "access_token": accessToken
+            "access_token": accessToken,
+            "refresh_token": refreshToken
         }
         const {data} = await axios.post("http://127.0.0.1:8000/account/kakao/login/", userData)
         setLogin(true);
