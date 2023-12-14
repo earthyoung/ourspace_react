@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const LoginGoogle = () => {
 
     const navigate = useNavigate();
-    const {login, setLogin} = useContext(LoginStateContext);
+    const {login, setLogin, id, setId, email, setEmail} = useContext(LoginStateContext);
     const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
     const onSuccess = async (res) => {
@@ -22,6 +22,8 @@ const LoginGoogle = () => {
         localStorage.setItem('access_token', data.access_token);
         localStorage.setItem("refresh_token", data.refresh_token);
         setLogin(true);
+        setId(data.user.id);
+        setEmail(data.user.email);
         navigate("/");
     }
 

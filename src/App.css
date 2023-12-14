@@ -10,6 +10,23 @@ body {
     margin: 0px;
 }
 
+@media (min-width: 650px) {
+    .App {
+        width: 640px;
+    }
+}
+  
+@media (max-width: 650px) {
+    .App {
+        width: 90vw;
+    }
+}
+
+#root {
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .Home {
     display: block;
 }
@@ -30,7 +47,6 @@ body {
 
 .EmailInput {
     text-align: center;
-    /* font-family: 'Do Hyeon'; */
     font-size: 24px;
     display: inline;
 }
@@ -39,4 +55,70 @@ body {
     display: inline;
     text-align: center;
     color: tomato;
+}
+
+.Logout {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home {
+    justify-content: center;
+    align-items: center;
+}
+
+.Buttons {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Logout button {
+    font-family: 'Do Hyeon';
+    color: white;
+    background-color: tomato;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+
+.FriendListButton button {
+    font-family: 'Do Hyeon';
+    color: white;
+    background-color: tomato;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+.AppointmentListButton button {
+    font-family: 'Do Hyeon';
+    color: white;
+    background-color: tomato;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
 }

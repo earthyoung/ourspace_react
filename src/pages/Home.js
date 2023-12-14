@@ -1,19 +1,15 @@
-import React, { useContext, useEffect, useState } from "react"
-import { LoginStateContext } from "../App"
 import axios from "axios";
-import Logout from "./components/Logout";
+import React, { useContext, useEffect, useState } from "react";
+import { LoginStateContext } from "../App";
 import LoginGoogle from "./components/LoginGoogle";
+import Logout from "./components/Logout";
+import FriendListButton from "./components/FriendListButton";
+import AppointmentListButton from "./components/AppointmentListButton";
 import LoginKakao from "./components/LoginKakao";
 
 const Home = () => {
 
-	const {login, setLogin} = useContext(LoginStateContext);
-	const [id, setId] = useState(null);
-	const [email, setEmail] = useState("익명");
-
-	useEffect(()=>{
-        console.log("loginStatus", login);
-    })
+	const {login, setLogin, id, setId, email, setEmail} = useContext(LoginStateContext);
 
 	useEffect( ()=>{
 		const accessToken = localStorage.getItem("access_token")
@@ -22,7 +18,7 @@ const Home = () => {
 			setId(null);
 			setEmail("익명");
 		} else {
-			if (!login) {
+			if (!login || !id) {
 				async function getUserData() {
 					const {data} = await axios.get("http://127.0.0.1:8000/account/user/", {headers: {"Authorization": "Bearer " + localStorage.getItem("access_token")}})
 					if (data.status) {
@@ -39,8 +35,9 @@ const Home = () => {
 	const Buttons = () => {
 		return (
 			<div className="Buttons">
-				<LoginGoogle />
-				<LoginKakao />
+				<FriendListButton />
+				<AppointmentListButton />
+				<Logout />
 			</div>
 		)
 	}
@@ -48,7 +45,8 @@ const Home = () => {
 	return (
 		<div className="Home">
 			<div className="EmailInput"><div className="EmailInputName">{email}</div>님, 환영합니다!</div>
-			{login ? <Logout /> : <Buttons />}
+			<br />
+			{login ? <Buttons /> : (<><LoginGoogle /><br /><LoginKakao /></>)}
 		</div>
 	)
 }
