@@ -1,22 +1,21 @@
 import React, { useContext, useEffect } from "react";
+import { dataStateContext } from "../../App";
+import { retrieveMyPostAPI } from "../../utils/api";
 import Home from "../home/Home";
 import CreatePostButton from "./components/CreatePostButton";
-import { dataStateContext } from "../../App";
 import PostItem from "./components/PostItem";
-import axios from "axios";
-import { retrieveAllPostAPI } from "../../utils/api";
 
 const PostView = () => {
 
     const {data, setData} = useContext(dataStateContext);
     const fetchData = async function () {
-        const result = await retrieveAllPostAPI();
+        const result = await retrieveMyPostAPI();
         setData(result)
     }
     
     useEffect(()=>{
        fetchData();
-    }, [])
+    }, [data])
 
     return (
         <>
@@ -25,7 +24,7 @@ const PostView = () => {
                 <div className="PostViewButton">
                     <CreatePostButton />
                 </div>
-                {data.map((d) => (<PostItem key={d.id} name={d.name} content={d.content} />))}
+                {data.map((d) => (<PostItem key={d.id} id={d.id} name={d.name} content={d.content} />))}
             </div>
         </>
     )
