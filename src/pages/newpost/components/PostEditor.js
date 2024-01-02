@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import Button from "../../../components/Button";
 import { useNavigate } from "react-router-dom";
+import { createNewPostAPI } from "../../../utils/api";
 
-const PostEditor = ({newPost, postId}) => {
+const PostEditor = ({newPost=true, postId}) => {
 
     const navigate = useNavigate();
     const handleSubmit = async () => {
-        console.log("handleSubmit called");
-        const {data} = await axios.post(process.env.REACT_APP_API_HOST + "/content/post/", {"name": title, "content": content}, {headers: {"Authorization": "Bearer " + localStorage.getItem("access_token")}});
-        console.log("handleSubmit data", data);
+        const data = createNewPostAPI(title, content);
         navigate("/post", {replace: true})
     }
 
@@ -30,7 +29,7 @@ const PostEditor = ({newPost, postId}) => {
                     <textarea value={content} onChange={(e)=>setContent(e.target.value)}/>
                 </div>
             </section>
-            <Button text={"Submit"} handleOnClick={handleSubmit} />
+            <Button text={(newPost) ? "Submit" : "Update"} handleOnClick={handleSubmit} />
         </div>
     )
 }

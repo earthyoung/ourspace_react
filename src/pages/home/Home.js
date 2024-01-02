@@ -33,16 +33,6 @@ const Home = () => {
 		}
 	}, [login, setLogin])
 
-	useEffect(()=>{
-		async function testConnection() {
-			const url = process.env.REACT_APP_API_HOST + "/account/health/"
-			console.log("api test url", url)
-			const {data} = await axios.get(url)
-			console.log("connection test", data)
-		}
-		testConnection()
-	})
-
 	const Buttons = () => {
 		return (
 			<div className="Buttons">
