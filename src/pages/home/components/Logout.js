@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../App";
+import Button from "../../../components/Button";
 
 
 const Logout = () => {
@@ -22,10 +23,7 @@ const Logout = () => {
     }
 
     return (
-        <div className="Logout">
-            <button onClick={handleLogout}>Logout</button>
-        </div>
-        
+        <Button text={"Logout"} handleOnClick={handleLogout} />
     )
 };
 

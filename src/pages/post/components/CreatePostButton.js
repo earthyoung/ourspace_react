@@ -1,6 +1,6 @@
 import React from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Button from "../../../components/Button";
 
 const CreatePostButton = () => {
 
@@ -10,9 +10,7 @@ const CreatePostButton = () => {
     }
 
     return (
-        <div className="CreatePostButton">
-            <button onClick={handleCreatePost}>Create Post</button>
-        </div>
+        <Button text={"Create Post"} handleOnClick={handleCreatePost} />
     )
 }
 

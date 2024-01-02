@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../../../components/Button";
 
 const PostButton = () => {
 
@@ -9,9 +10,7 @@ const PostButton = () => {
     }
 
     return (
-        <div className="PostButton">
-            <button onClick={handlePost}>Post</button>
-        </div>
+        <Button text={"Post"} handleOnClick={handlePost} />
     )
 }
 

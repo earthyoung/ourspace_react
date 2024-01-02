@@ -1,13 +1,12 @@
 import React from "react";
+import Button from "../../../components/Button";
 
 const ChatButton = () => {
 
     const handleChat = () => {}
 
     return (
-        <div className="ChatButton">
-            <button onClick={handleChat}>Chat</button>
-        </div>
+        <Button text={"Chat"} handleOnClick={handleChat} />
     )
 }
 

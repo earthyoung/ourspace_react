@@ -1,12 +1,11 @@
 import React from "react";
+import Button from "../../../components/Button";
 
 const EmailButton = () => {
     const handleEmail = () => {}
 
     return (
-        <div className="EmailButton">
-            <button onClick={handleEmail}>Email</button>
-        </div>
+        <Button text={"email"} handleOnClick={handleEmail}/>
     )
 }
 
