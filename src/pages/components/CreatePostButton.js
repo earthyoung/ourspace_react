@@ -9,7 +9,7 @@ const CreatePostButton = () => {
 
     return (
         <div className="CreatePostButton">
-            <button onClick={handleCreatePost}>Create Post</button>
+            <button onClick={handleCreatePost}>Post</button>
         </div>
     )
 }

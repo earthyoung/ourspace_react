@@ -1,9 +1,7 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import LoginGoogle from './pages/components/LoginGoogle';
-import Logout from './pages/components/Logout';
 import React, { useState } from 'react';
-import "./App.css"
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import "./App.css";
+import Home from './pages/Home';
 
 export const LoginStateContext = React.createContext();
 export const dataStateContext = React.createContext();
@@ -20,7 +18,7 @@ const App = () => {
       <dataStateContext.Provider value={{data, setData}}>
         <Router>
               <Routes>
-                <Route path="/" element={<Home />}></Route> 
+                <Route path="/" element={<Home />}></Route>
               </Routes>
         </Router>
       </dataStateContext.Provider>
