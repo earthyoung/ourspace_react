@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../App";
 import KakaoLogin from "react-kakao-login";
@@ -18,7 +18,8 @@ const LoginKakao = () => {
             "access_token": accessToken,
             "refresh_token": refreshToken
         }
-        const {data} = await axios.post("http://127.0.0.1:8000/account/kakao/login/", userData)
+        const {data} = await axios.post(process.env.REACT_APP_API_HOST + "/account/kakao/login/", userData)
+        console.log("data--kakao login", data)
         setLogin(true);
         localStorage.setItem("access_token", data.access_token);
         localStorage.setItem("refresh_token", data.refresh_token);
@@ -42,4 +43,4 @@ const LoginKakao = () => {
     )
 }
 
-export default LoginKakao;
+export default React.memo(LoginKakao);

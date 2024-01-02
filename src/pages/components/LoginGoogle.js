@@ -15,7 +15,7 @@ const LoginGoogle = () => {
         const token = {
             "token": res.credential,
         }
-        const {data} = await axios.post("http://127.0.0.1:8000/account/google/login/", token, {headers: {
+        const {data} = await axios.post(process.env.REACT_APP_API_HOST + "/account/google/login/", token, {headers: {
             'Content-Type': 'application/json'
         }}, {withCredentials: true});
         axios.defaults.headers.common["Authorization"] = `Bearer ${data["access_token"]}`;

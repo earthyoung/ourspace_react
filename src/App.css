@@ -75,6 +75,7 @@ body {
 }
 
 .Logout button {
+    cursor: pointer;
     font-family: 'Do Hyeon';
     color: white;
     background-color: tomato;
@@ -91,7 +92,8 @@ body {
 }
 
 
-.FriendListButton button {
+.EmailButton button {
+    cursor: pointer;
     font-family: 'Do Hyeon';
     color: white;
     background-color: tomato;
@@ -107,7 +109,25 @@ body {
     margin: 10px;
 }
 
-.AppointmentListButton button {
+.ChatButton button {
+    cursor: pointer;
+    font-family: 'Do Hyeon';
+    color: white;
+    background-color: tomato;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+.CreatePostButton button {
+    cursor: pointer;
     font-family: 'Do Hyeon';
     color: white;
     background-color: tomato;
