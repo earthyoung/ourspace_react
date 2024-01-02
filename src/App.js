@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import "./App.css";
-import Home from './pages/Home';
+import Home from './pages/home/Home';
+import Post from './pages/post/Post';
+import NewPost from './pages/newpost/NewPost';
 
 export const LoginStateContext = React.createContext();
 export const dataStateContext = React.createContext();
@@ -19,6 +21,8 @@ const App = () => {
         <Router>
               <Routes>
                 <Route path="/" element={<Home />}></Route>
+                <Route path="/post" element={<Post />}></Route>
+                <Route path="/post/new" element={<NewPost />}></Route>
               </Routes>
         </Router>
       </dataStateContext.Provider>

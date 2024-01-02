@@ -2,7 +2,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import axios from "axios";
 import React, { useContext } from "react";
-import { LoginStateContext } from "../../App";
+import { LoginStateContext } from "../../../App";
 import { useNavigate } from "react-router-dom";
 
 const LoginGoogle = () => {

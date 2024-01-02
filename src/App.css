@@ -126,6 +126,11 @@ body {
     margin: 10px;
 }
 
+.PostView .PostViewButton {
+    justify-content: center;
+    align-items: center;
+}
+
 .CreatePostButton button {
     cursor: pointer;
     font-family: 'Do Hyeon';
@@ -141,4 +146,29 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     margin: 10px;
+}
+
+.PostButton button {
+    cursor: pointer;
+    font-family: 'Do Hyeon';
+    color: white;
+    background-color: tomato;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+.PostEditor input {
+    font-family: "Do Hyeon";
+}
+
+.PostEditor textarea {
+    font-family: "Do Hyeon";
 }

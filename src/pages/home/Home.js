@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useContext, useEffect } from "react";
-import { LoginStateContext } from "../App";
+import { LoginStateContext } from "../../App";
 import ChatButton from "./components/ChatButton";
 import EmailButton from "./components/EmailButton";
+import LoginGoogle from "./components/LoginGoogle";
 import LoginKakao from "./components/LoginKakao";
 import Logout from "./components/Logout";
-import LoginGoogle from "./components/LoginGoogle";
-import CreatePostButton from "./components/CreatePostButton";
+import PostButton from "./components/PostButton";
 
 const Home = () => {
 
@@ -49,7 +49,7 @@ const Home = () => {
 				<EmailButton />
 				<ChatButton />
 				<Logout />
-				<CreatePostButton />
+				<PostButton />
 			</div>
 		)
 	}
