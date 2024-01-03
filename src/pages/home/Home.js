@@ -7,6 +7,7 @@ import LoginGoogle from "./components/LoginGoogle";
 import LoginKakao from "./components/LoginKakao";
 import Logout from "./components/Logout";
 import PostButton from "./components/PostButton";
+import GroupButton from "./components/GroupButton";
 
 const Home = () => {
 
@@ -40,6 +41,7 @@ const Home = () => {
 				<ChatButton />
 				<Logout />
 				<PostButton />
+				<GroupButton />
 			</div>
 		)
 	}

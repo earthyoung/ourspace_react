@@ -189,3 +189,12 @@ body {
 .PostItem .post-button {
     display:flex;
 }
+
+.GroupItem {
+    font-family: "Do Hyeon";
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    justify-content: space-around;
+}

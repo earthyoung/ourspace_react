@@ -26,6 +26,10 @@ const destroyPostAPI = async function (id) {
     return authorizedDeleteAPI("/content/post/" + id.toString());
 }
 
+const retrieveMyGroupAPI = async function () {
+    return authorizedGetAPI("/account/group/")
+}
+
 const authorizedGetAPI = async function (url) {
     const {data} = await axios.get(API_HOST + url, {headers: {"Authorization": "Bearer " + localStorage.getItem("access_token")}});
     return data
@@ -46,4 +50,4 @@ const authorizedDeleteAPI = async function (url) {
     return data
 }
 
-export {createNewPostAPI, retrieveAllPostAPI, retrieveMyPostAPI, destroyPostAPI, updatePostAPI, retrievePostAPI};
+export {createNewPostAPI, retrieveAllPostAPI, retrieveMyPostAPI, destroyPostAPI, updatePostAPI, retrievePostAPI, retrieveMyGroupAPI};
