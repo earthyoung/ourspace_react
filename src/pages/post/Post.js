@@ -10,12 +10,14 @@ const PostView = () => {
     const {data, setData} = useContext(dataStateContext);
     const fetchData = async function () {
         const result = await retrieveMyPostAPI();
-        setData(result)
+        if (result !== data) {
+            setData(result)
+        }
     }
     
     useEffect(()=>{
        fetchData();
-    }, [data])
+    }, [])
 
     return (
         <>

@@ -4,6 +4,7 @@ import "./App.css";
 import Home from './pages/home/Home';
 import Post from './pages/post/Post';
 import NewPost from './pages/newpost/NewPost';
+import EditPost from './pages/editpost/EditPost';
 
 export const LoginStateContext = React.createContext();
 export const dataStateContext = React.createContext();
@@ -23,6 +24,7 @@ const App = () => {
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/post" element={<Post />}></Route>
                 <Route path="/post/new" element={<NewPost />}></Route>
+                <Route path="/post/edit/:id" element={<EditPost />}></Route>
               </Routes>
         </Router>
       </dataStateContext.Provider>

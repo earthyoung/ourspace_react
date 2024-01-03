@@ -19,7 +19,6 @@ const LoginKakao = () => {
             "refresh_token": refreshToken
         }
         const {data} = await axios.post(process.env.REACT_APP_API_HOST + "/account/kakao/login/", userData)
-        console.log("data--kakao login", data)
         setLogin(true);
         localStorage.setItem("access_token", data.access_token);
         localStorage.setItem("refresh_token", data.refresh_token);

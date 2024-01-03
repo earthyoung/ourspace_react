@@ -173,6 +173,10 @@ body {
     font-family: "Do Hyeon";
 }
 
+.PostEditor .buttons {
+    display: flex;
+}
+
 .PostItem {
     font-family: "Do Hyeon";
     padding-top: 15px;
@@ -180,4 +184,8 @@ body {
     border-bottom: 1px solid #e2e2e2;
     display: flex;
     justify-content: space-around;
+}
+
+.PostItem .post-button {
+    display:flex;
 }
